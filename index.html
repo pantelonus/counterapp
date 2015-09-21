@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Counter App</title>
+<link rel="stylesheet" href="counter.css">
+<script src="counter.js"></script>
+</head>
+
+<body>
+
+<nav>
+
+<div id="menu">
+
+	<div id="menu_header">
+		<div id="logo">
+			<p id="f1">F</p><p id="f2">F</p>
+		</div>
+	</div>
+
+	<div id="menu_contents">
+		<span>About</span>
+		<span>Settings</span>
+	</div>
+
+</div>
+
+<div id="menu_button" onclick="menuSlide()">
+<div class="menu_bar"></div>
+<div class="menu_bar"></div>
+<div class="menu_bar"></div>
+</div>
+<div id="total"><p id="output">0.00</p></div>
+<div id="reset"><p onclick="reset()">Reset</p></div>
+</nav>
+<main>
+<div>
+	<span>
+		<p class="minus" onclick="minus(0.01)">-</p><p>0.01</p><p class="plus" onclick="plus(0.01)">+</p>
+	</span>
+	
+	<span>
+		<p class="minus" onclick="minus(0.1)">-</p><p>0.10</p><p class="plus" onclick="plus(0.1)">+</p>
+	</span>
+	<span>
+		<p class="minus" onclick="minus(1)">-</p><p>1.00</p><p class="plus" onclick="plus(1)">+</p>
+	</span>
+	<span>
+		<p class="minus" onclick="minus(10)">-</p><p>10.00</p><p class="plus" onclick="plus(10)">+</p>
+	</span>
+	<span>
+		<p class="minus" onclick="minus(50)">-</p><p>50.00</p><p class="plus" onclick="plus(50)">+</p>
+	</span>
+</div>
+<div class="v_divider">
+</div>
+<div>
+	<span>
+		<p class="minus" onclick="minus(0.05)">-</p><p>0.05</p><p class="plus" onclick="plus(0.05)">+</p>
+	</span>
+
+	<span>
+		<p class="minus" onclick="minus(0.25)">-</p><p>0.25</p><p class="plus" onclick="plus(0.25)">+</p> 
+	</span>
+	<span>
+		<p class="minus" onclick="minus(5)">-</p><p>5.00</p><p class="plus" onclick="plus(5)">+</p>
+	</span>
+	<span>
+		<p class="minus" onclick="minus(20)">-</p><p>20.00</p><p class="plus" onclick="plus(20)">+</p>
+	</span>
+	<span>
+		<p class="minus" onclick="minus(100)">-</p><p>100.00</p><p class="plus" onclick="plus(100)">+</p>
+	</span>
+</div>
+</main>
+
+<section id="about">
+
+</section>
+
+<section id="settings">
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+
+
+body, main, span, #menu_button {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-around;
+	-webkit-justify-content: space-around;
+	margin: 0;
+}
+
+body, main div, #menu, #menu_button, #menu_contents {
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+.v_divider {
+	height: 85vh;
+	width: 0;
+	flex: 0;
+	-webkit-flex: 0;
+	align-self: center;
+	-webkit-align-self: center;
+	border: solid #D3D3D3 1px;
+}
+
+
+/*------ MENU ------*/
+
+#menu, #menu_header, #menu_contents {
+	display: flex;
+	display: -webkit-flex;
+}
+
+#menu, #menu_button {
+	transition: left 0.5s;
+	-webkit-transition: left 0.5s;
+}
+
+#menu {
+	position: absolute;
+	justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	width: 52%;
+	height: 100%;
+	background-color: white;
+	box-shadow: 2px 0 10px #565656;
+	left: -53%;
+}
+
+#menu_header {
+	background-color: rgb(157,161,255);
+	height: 2.5em;
+	justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+	align-items: center;
+	-webkit-align-items: center;
+	font-family: "MarkerFelt-Wide";
+}
+
+#logo {
+	width: 1.5em;
+	height: 1.5em;
+	border: solid 3px rgb(60,179,113);
+	border-radius: 25px;
+	border-top-color: rgb(157,161,255);
+	border-left-color: rgb(157,161,255);
+	box-shadow: 0px 0px 5px #333;
+	margin-left: 0.6em;
+	background-color: #FFFFFF;
+}
+
+#logo p {
+	display: inline;
+	position: relative;
+	-webkit-text-stroke: 1px rgb(182,198,214);
+	color: rgb(255,255,240);
+}
+
+#f1 {
+	text-shadow: 0px 1px 5px rgb(60,179,113);
+}
+
+#f2 {
+	top: 15%;
+	text-shadow: 0px 1px 5px rgb(157,161,255);
+}
+
+
+
+#menu_contents {
+	font-weight: normal;
+	font-size: 75%;
+	color: #252525;
+	padding: 0.75em;
+}
+
+#menu_contents span {
+	justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+}
+
+#menu_button {
+	z-index: 2;
+	position: absolute;
+	left: 1em;
+	top: 0.85em;
+}
+
+.menu_bar {
+ border: solid white 3px;
+ border-radius: 10px;
+ width: 1.25em;
+ margin: 4px 0;
+}
+
+/* ------ ------ */
+
+
+body {
+	font: 2em "Avenir-Book";
+	height: 100%;
+	text-align: center;
+}
+
+main div {
+	flex: 1;
+	-webkit-flex: 1;
+	align-items: center;
+	-webkit-align-items: center;
+}
+
+span, nav {
+	align-items: center;
+	-webkit-align-items: center;
+	font-size: 1.5em;
+}
+
+nav {
+	display: flex;
+	display: -webkit-flex;
+	flex: 1 0 2.5em;
+	-webkit-flex: 1 0 2.5em;
+}
+
+#total {
+	flex: 1;
+	-webkit-flex: 1;
+	margin-left: 3.5em;
+}
+
+#reset {
+	margin-right: 1em;
+}
+
+nav p#output {
+ font-size: 2em;
+}
+
+span {
+	flex: 1;
+	-webkit-flex: 1;
+	width: 100%;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+
+span p {
+	width: 3.5em;
+}
+
+.minus, .plus, nav {
+	background-color: rgb(60,179,113);
+	font-weight: bold;
+	color: white;
+}
+
+.minus {
+ /*background-color: rgb(240,128,128);*/
+ background-color: rgb(157,161,255);
+/*background-color: rgb(142,199,255);*/
+}
+
+.minus, .plus {
+	border-radius: 15px;
+	font-size: 1.25em;
+	width: 2em;
+	line-height: 1.6;
+}
+

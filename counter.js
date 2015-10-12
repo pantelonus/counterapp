@@ -1,7 +1,7 @@
 
 var output = 0;
 
-function reset() {
+function resetBalance() {
 	var reset = confirm('Do you want to reset your balance to 0.00?');
 	if (reset) {
 		output = 0;
@@ -11,13 +11,13 @@ function reset() {
 }
 
 function plus(amt) {
-	output += amt
+	output += amt;
 	var update = document.getElementById('output');
 	update.innerHTML = output.toFixed(2);
 }
 
 function minus(amt) {
-	output -= amt
+	output -= amt;
 	var update = document.getElementById('output');
 	update.innerHTML = output.toFixed(2);
 }
@@ -30,7 +30,7 @@ function menuSlide() {
 	
 	if(toggle) {
 		menuButton.style.left = "1em";
-		menu.style.left = "-53%"
+		menu.style.left = "-53%";
 		toggle = false;
 	} else {
 		menuButton.style.left = "8.5em";

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Counter App</title>
 <link rel="stylesheet" href="counter.css">
-<script src="counter.js"></script>
+<script src="counter.js" async></script>
 </head>
 
 <body>
@@ -26,51 +26,50 @@
 
 </div>
 
-<div id="menu_button" onclick="menuSlide()">
+<div id="menu_button">
 <div class="menu_bar"></div>
 <div class="menu_bar"></div>
 <div class="menu_bar"></div>
 </div>
 <div id="total"><p id="output">0.00</p></div>
-<div id="reset"><p onclick="resetBalance()">Reset</p></div>
+<div id="reset"><p>Reset</p></div>
 </nav>
 <main>
 <div>
-	<span>
-		<p class="minus" onclick="minus(0.01)">-</p><p>0.01</p><p class="plus" onclick="plus(0.01)">+</p>
+	<span id="0.01">
+		<p class="minus">-</p><p>0.01</p><p class="plus">+</p>
 	</span>
 	
-	<span>
-		<p class="minus" onclick="minus(0.1)">-</p><p>0.10</p><p class="plus" onclick="plus(0.1)">+</p>
+	<span id="0.1">
+		<p class="minus">-</p><p>0.10</p><p class="plus">+</p>
 	</span>
-	<span>
-		<p class="minus" onclick="minus(1)">-</p><p>1.00</p><p class="plus" onclick="plus(1)">+</p>
+	<span id="1">
+		<p class="minus">-</p><p>1.00</p><p class="plus">+</p>
 	</span>
-	<span>
-		<p class="minus" onclick="minus(10)">-</p><p>10.00</p><p class="plus" onclick="plus(10)">+</p>
+	<span id="10">
+		<p class="minus">-</p><p>10.00</p><p class="plus">+</p>
 	</span>
-	<span>
-		<p class="minus" onclick="minus(50)">-</p><p>50.00</p><p class="plus" onclick="plus(50)">+</p>
+	<span id="50">
+		<p class="minus">-</p><p>50.00</p><p class="plus">+</p>
 	</span>
 </div>
 <div class="v_divider">
 </div>
 <div>
-	<span>
-		<p class="minus" onclick="minus(0.05)">-</p><p>0.05</p><p class="plus" onclick="plus(0.05)">+</p>
+	<span id="0.05">
+		<p class="minus">-</p><p>0.05</p><p class="plus">+</p>
 	</span>
-
-	<span>
-		<p class="minus" onclick="minus(0.25)">-</p><p>0.25</p><p class="plus" onclick="plus(0.25)">+</p> 
+	<span id="0.25">
+		<p class="minus">-</p><p>0.25</p><p class="plus">+</p> 
 	</span>
-	<span>
-		<p class="minus" onclick="minus(5)">-</p><p>5.00</p><p class="plus" onclick="plus(5)">+</p>
+	<span id="5">
+		<p class="minus">-</p><p>5.00</p><p class="plus">+</p>
 	</span>
-	<span>
-		<p class="minus" onclick="minus(20)">-</p><p>20.00</p><p class="plus" onclick="plus(20)">+</p>
+	<span id="20">
+		<p class="minus">-</p><p>20.00</p><p class="plus">+</p>
 	</span>
-	<span>
-		<p class="minus" onclick="minus(100)">-</p><p>100.00</p><p class="plus" onclick="plus(100)">+</p>
+	<span id="100">
+		<p class="minus">-</p><p>100.00</p><p class="plus">+</p>
 	</span>
 </div>
 </main>

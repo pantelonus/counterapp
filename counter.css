@@ -1,4 +1,21 @@
 
+/* App Z-Index Layers */
+
+#overlay {   /*Fixed position*/
+  z-index: -1;
+}
+
+#menu {   /*Absolute position*/
+  z-index: 3;
+}
+
+#menu_button {    /*Absolute position*/
+  z-index: 4;
+}
+
+#reset_confirm, #reset_cancel {
+  z-index: 4;
+}
 
 body, main, span, #menu_button {
 	display: flex;
@@ -45,7 +62,6 @@ body, main div, #menu, #menu_button, #menu_contents {
 	background-color: white;
 	box-shadow: 2px 0 10px #565656;
 	left: -53%;
-	z-index: 2;
 }
 
 #menu_header {
@@ -101,7 +117,6 @@ body, main div, #menu, #menu_button, #menu_contents {
 }
 
 #menu_button {
-	z-index: 3;
 	position: absolute;
 	left: 1em;
 	top: 0.85em;
@@ -124,7 +139,6 @@ body, main div, #menu, #menu_button, #menu_contents {
   height: 100%;
   transition: opacity 0.5s;
   -webkit-transition: opacity 0.5s;
-  z-index: -1;
 }
 
 body {
@@ -151,7 +165,6 @@ nav {
 	display: -webkit-flex;
 	flex: 1 0 2.5em;
 	-webkit-flex: 1 0 2.5em;
-	z-index: 2;
 }
 
 #total {
@@ -161,7 +174,10 @@ nav {
 }
 
 #reset {
-	margin-right: 1em;
+  position: absolute;
+  top: -0.25em;
+  right: 1em;
+  z-index: 4;
 }
 
 #reset_confirm, #reset_cancel {
@@ -179,8 +195,7 @@ nav {
   padding: 0.3em;
   position: absolute;
   right: 1em;
-  top: -10%;
-  z-index: 1;
+  top: -25%;
   box-shadow: 0 0 10px #333;
   transition: top 0.5s;
   -webkit-transition: top 0.5s;

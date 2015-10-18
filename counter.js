@@ -1,18 +1,19 @@
 
 var output = 0,
     updateOutput = document.getElementById('output'),
-    resetBalance = document.getElementById('reset'),
     menuButton = document.getElementById('menu_button'),
-    menu = document.getElementById('menu'),
+    resetConfirm = document.getElementById('reset_confirm'),
+    resetCancel = document.getElementById('reset_cancel'),
+    overlay = document.getElementById('overlay'),
+    menu = {
+      dom: document.getElementById('menu'),
+      toggled: false
+    },
+    resetBalance = {
+      dom: document.getElementById('reset'),
+      toggled: false
+    },
     toggle;
-
-resetBalance.addEventListener('click', function () {
-	var reset = confirm('Do you want to reset your balance to 0.00?');
-	if (reset) {
-		output = 0;
-		updateOutput.innerHTML = output.toFixed(2);
-	}
-});
 
 
 document.body.addEventListener('click', function(e){
@@ -37,13 +38,35 @@ function minus(amt) {
 	updateOutput.innerHTML = output.toFixed(2);
 }
 
+function reset() {
+  toggle = toggle ?
+  		(resetConfirm.style.top = "-10%",
+  		resetCancel.style.top = "-10%",
+  		overlay.style.opacity = "0",
+  		toggle = false)
+  	:
+  		(resetConfirm.style.top = "3.5em",
+  		resetCancel.style.top = "7em",
+  		overlay.style.opacity = "0.75",
+  		toggle = true);
+}
+
 menuButton.addEventListener('click', function () {
   toggle = toggle ?
 		(menuButton.style.left = "1em",
-		menu.style.left = "-53%",
+		menu.dom.style.left = "-53%",
 		toggle = false)
 	:
 		(menuButton.style.left = "8.5em",
-		menu.style.left = "0",
+		menu.dom.style.left = "0",
 		toggle = true);
 });
+
+resetBalance.dom.addEventListener('click', reset);
+resetConfirm.addEventListener('click', function(){
+  output = 0;
+  updateOutput.innerHTML = output.toFixed(2);
+  reset();
+});
+resetCancel.addEventListener('click', reset);
+overlay.addEventListener('click', reset);

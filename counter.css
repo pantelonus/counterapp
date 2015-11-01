@@ -13,16 +13,27 @@
   z-index: 4;
 }
 
-#reset_confirm, #reset_cancel {
+#reset {
   z-index: 4;
 }
 
+#reset_confirm, #reset_cancel {   /*Absolute position*/
+  z-index: 4;
+}
+
+/* Layout Setup */
+
+body, main, span, nav,
+#menu, #menu_button, #menu_header,
+#menu_contents, #reset_confirm, #reset_cancel {
+  display: flex;
+  display: -webkit-flex;
+}   /* Flexbox Setup */
+
 body, main, span, #menu_button {
-	display: flex;
-	display: -webkit-flex;
+  margin: 0;
 	justify-content: space-around;
 	-webkit-justify-content: space-around;
-	margin: 0;
 }
 
 body, main div, #menu, #menu_button, #menu_contents {
@@ -30,27 +41,37 @@ body, main div, #menu, #menu_button, #menu_contents {
 	-webkit-flex-direction: column;
 }
 
-.v_divider {
-	height: 85vh;
-	width: 0;
-	flex: 0;
-	-webkit-flex: 0;
-	align-self: center;
-	-webkit-align-self: center;
-	border: solid #D3D3D3 1px;
+body {
+/*  height: 100%;*/
 }
 
-
-/*------ MENU ------*/
-
-#menu, #menu_header, #menu_contents {
-	display: flex;
-	display: -webkit-flex;
+span, nav {
+	align-items: center;
+	-webkit-align-items: center;
 }
 
-#menu, #menu_button {
-	transition: left 0.5s;
-	-webkit-transition: left 0.5s;
+nav {
+	flex: 1 0 2.5em;
+	-webkit-flex: 1 0 2.5em;
+}
+
+main div {
+	flex: 1;
+	-webkit-flex: 1;
+	align-items: center;
+	-webkit-align-items: center;
+}
+
+span {
+	flex: 1;
+	-webkit-flex: 1;
+	width: 100%;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+
+span p {
+	width: 3.5em;
 }
 
 #menu {
@@ -59,19 +80,152 @@ body, main div, #menu, #menu_button, #menu_contents {
 	-webkit-justify-content: flex-start;
 	width: 52%;
 	height: 100%;
-	background-color: white;
-	box-shadow: 2px 0 10px #565656;
 	left: -53%;
 }
 
+#menu_button {
+	position: absolute;
+	left: 1em;
+	top: 0.85em;
+}
+
 #menu_header {
-	background-color: rgb(157,161,255);
 	height: 2.5em;
 	justify-content: flex-start;
 	-webkit-justify-content: flex-start;
 	align-items: center;
 	-webkit-align-items: center;
-	font-family: "MarkerFelt-Wide";
+}
+
+#menu_contents {
+	padding: 0.75em;
+}
+
+#menu_contents span {
+	justify-content: flex-start;
+	-webkit-justify-content: flex-start;
+}
+
+#total {
+	flex: 1;
+	-webkit-flex: 1;
+	margin-left: 3.5em;
+}
+
+#reset {
+  position: absolute;
+  top: -0.25em;
+  right: 1em;
+}
+
+/* Fonts, Sizes & Percentages */
+
+body {
+  font: 1em "Avenir-Book";
+  text-align: center;
+}
+
+span, nav {
+  font-size: 1.5em;
+}
+
+#output {
+ font-size: 100%;
+}
+
+#menu_header {
+  font-family: "MarkerFelt-Wide";
+}
+
+#menu_contents {
+  font-weight: normal;
+  font-size: 75%;
+}
+
+#reset_confirm, #reset_cancel {
+  font-size: 85%;
+}
+
+nav, .plus, .minus {
+  font-weight: bold;
+}
+
+.plus, .minus {
+  font-size: 1.25em;
+  line-height: 1.6;
+}
+
+/* Colors */
+
+.minus, .plus, nav {
+	background-color: rgb(60,179,113);
+	color: white;
+}
+
+.minus {
+ background-color: rgb(157,161,255);
+}
+
+#menu {
+	background-color: white;
+	box-shadow: 2px 0 10px #565656;
+}
+
+#menu_header {
+  background-color: rgb(157,161,255);
+}
+
+#menu_contents {
+  color: #252525;
+}
+
+#reset_confirm {
+  background-color: rgb(60,179,113); /*Green*/
+}
+
+#reset_cancel {
+  background-color: rgb(157,161,255); /*Purple*/
+}
+
+/* Other Styles & Effects */
+
+#menu, #menu_button {
+	transition: left 0.5s;
+	-webkit-transition: left 0.5s;
+}
+
+/* Items */
+
+#overlay {
+  position: fixed;
+  background-color: black;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+}
+
+.menu_bar {
+ border: solid white 3px;
+ border-radius: 10px;
+ width: 1.25em;
+ margin: 4px 0;
+}
+
+.v_divider {
+	height: vh; /* BROKEN */
+	width: 0;
+	flex: 0;
+	-webkit-flex: 0;
+	align-self: center;
+	-webkit-align-self: center;
+	border: solid #D3D3D3 1px;
+}    /* TO DO */
+
+.minus, .plus {
+	border-radius: 15px;
+	width: 2em;
 }
 
 #logo {
@@ -102,94 +256,13 @@ body, main div, #menu, #menu_button, #menu_contents {
 	text-shadow: 0px 1px 5px rgb(157,161,255);
 }
 
-
-
-#menu_contents {
-	font-weight: normal;
-	font-size: 75%;
-	color: #252525;
-	padding: 0.75em;
-}
-
-#menu_contents span {
-	justify-content: flex-start;
-	-webkit-justify-content: flex-start;
-}
-
-#menu_button {
-	position: absolute;
-	left: 1em;
-	top: 0.85em;
-}
-
-.menu_bar {
- border: solid white 3px;
- border-radius: 10px;
- width: 1.25em;
- margin: 4px 0;
-}
-
-/* ------ ------ */
-
-#overlay {
-  position: fixed;
-  background-color: black;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;
-}
-
-body {
-	font: 2em "Avenir-Book";
-	height: 100%;
-	text-align: center;
-}
-
-main div {
-	flex: 1;
-	-webkit-flex: 1;
-	align-items: center;
-	-webkit-align-items: center;
-}
-
-span, nav {
-	align-items: center;
-	-webkit-align-items: center;
-	font-size: 1.5em;
-}
-
-nav {
-	display: flex;
-	display: -webkit-flex;
-	flex: 1 0 2.5em;
-	-webkit-flex: 1 0 2.5em;
-}
-
-#total {
-	flex: 1;
-	-webkit-flex: 1;
-	margin-left: 3.5em;
-}
-
-#reset {
-  position: absolute;
-  top: -0.25em;
-  right: 1em;
-  z-index: 4;
-}
-
 #reset_confirm, #reset_cancel {
-  display: flex;
-  display: -webkit-flex;
   justify-content: center;
   -webkit-justify-content: center;
   align-items: center;
   -webkit-align-items: center;
   width: 2em;
   height: 2em;
-  font-size: 85%;
   border: solid white 5px;
   border-radius: 100%;
   padding: 0.3em;
@@ -199,48 +272,5 @@ nav {
   box-shadow: 0 0 10px #333;
   transition: top 0.5s;
   -webkit-transition: top 0.5s;
-}
-
-#reset_confirm {
-  background-color: rgb(60,179,113); /*Green*/
-}
-
-#reset_cancel {
-  background-color: rgb(157,161,255); /*Purple*/
-}
-
-nav p#output {
- font-size: 2em;
-}
-
-span {
-	flex: 1;
-	-webkit-flex: 1;
-	width: 100%;
-	justify-content: center;
-	-webkit-justify-content: center;
-}
-
-span p {
-	width: 3.5em;
-}
-
-.minus, .plus, nav {
-	background-color: rgb(60,179,113);
-	font-weight: bold;
-	color: white;
-}
-
-.minus {
- /*background-color: rgb(240,128,128);*/
- background-color: rgb(157,161,255);
-/*background-color: rgb(142,199,255);*/
-}
-
-.minus, .plus {
-	border-radius: 15px;
-	font-size: 1.25em;
-	width: 2em;
-	line-height: 1.6;
 }
 

@@ -23,9 +23,7 @@
 
 /* Layout Setup */
 
-body, main, span, nav,
-#menu, #menu_button, #menu_header,
-#menu_contents, #reset_confirm, #reset_cancel {
+body, main, span, nav, #menu, #menu_button, #menu_header, #menu_contents, #reset_confirm, #reset_cancel {
   display: flex;
   display: -webkit-flex;
 }   /* Flexbox Setup */
@@ -42,7 +40,9 @@ body, main div, #menu, #menu_button, #menu_contents {
 }
 
 body {
-/*  height: 100%;*/
+  /* position: fixed; */
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 span, nav {
@@ -51,8 +51,7 @@ span, nav {
 }
 
 nav {
-	flex: 1 0 2.5em;
-	-webkit-flex: 1 0 2.5em;
+	height: 18vh;
 }
 
 main div {
@@ -76,8 +75,6 @@ span p {
 
 #menu {
 	position: absolute;
-	justify-content: flex-start;
-	-webkit-justify-content: flex-start;
 	width: 52%;
 	height: 100%;
 	left: -53%;
@@ -86,13 +83,11 @@ span p {
 #menu_button {
 	position: absolute;
 	left: 1em;
-	top: 0.85em;
+	top: 1.85em;
 }
 
 #menu_header {
-	height: 2.5em;
-	justify-content: flex-start;
-	-webkit-justify-content: flex-start;
+	height: 18vh;
 	align-items: center;
 	-webkit-align-items: center;
 }
@@ -109,28 +104,23 @@ span p {
 #total {
 	flex: 1;
 	-webkit-flex: 1;
-	margin-left: 3.5em;
 }
 
 #reset {
   position: absolute;
   top: -0.25em;
-  right: 1em;
+  right: 0.5em;
 }
 
 /* Fonts, Sizes & Percentages */
 
 body {
-  font: 1em "Avenir-Book";
+  font: 3.5vh "Avenir-Book";
   text-align: center;
 }
 
-span, nav {
-  font-size: 1.5em;
-}
-
 #output {
- font-size: 100%;
+ font-size: 3em;
 }
 
 #menu_header {
@@ -139,11 +129,15 @@ span, nav {
 
 #menu_contents {
   font-weight: normal;
-  font-size: 75%;
+  font-size: 0.75em;
+}
+
+#reset {
+	font-size: 2em;
 }
 
 #reset_confirm, #reset_cancel {
-  font-size: 85%;
+  font-size: 1.25em;
 }
 
 nav, .plus, .minus {
@@ -151,7 +145,7 @@ nav, .plus, .minus {
 }
 
 .plus, .minus {
-  font-size: 1.25em;
+  font-size: 1.5em;
   line-height: 1.6;
 }
 
@@ -207,10 +201,10 @@ nav, .plus, .minus {
 }
 
 .menu_bar {
- border: solid white 3px;
+ border: solid white 0.5vh;
  border-radius: 10px;
- width: 1.25em;
- margin: 4px 0;
+ width: 6.5vh;
+ margin: 0.5vh 0;
 }
 
 .v_divider {
@@ -226,6 +220,7 @@ nav, .plus, .minus {
 .minus, .plus {
 	border-radius: 15px;
 	width: 2em;
+	margin: 0;
 }
 
 #logo {

@@ -23,7 +23,12 @@
 
 /* Layout Setup */
 
-body, main, span, nav, #menu, #menu_button, #menu_header, #menu_contents, #reset_confirm, #reset_cancel {
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body, main, main div, span, nav, #menu, #menu_button, #menu_header, #menu_contents, #reset_confirm, #reset_cancel {
   display: flex;
   display: -webkit-flex;
 }   /* Flexbox Setup */
@@ -39,12 +44,6 @@ body, main div, #menu, #menu_button, #menu_contents {
 	-webkit-flex-direction: column;
 }
 
-body {
-  /* position: fixed; */
-  /* height: 100%; */
-  /* width: 100%; */
-}
-
 span, nav {
 	align-items: center;
 	-webkit-align-items: center;
@@ -52,6 +51,11 @@ span, nav {
 
 nav {
 	height: 18vh;
+}
+
+main {
+	flex: 1;
+	-webkit-flex: 1;
 }
 
 main div {
